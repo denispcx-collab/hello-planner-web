@@ -82,14 +82,24 @@ const Footer = () => {
                 Producto
               </a>
               <a
-                href="#comunidad"
+                href="#precio"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('#comunidad');
+                  scrollToSection('#precio');
                 }}
                 className="text-cream/60 hover:text-cream transition-colors"
               >
-                Comunidad
+                Precio
+              </a>
+              <a
+                href="#faq"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('#faq');
+                }}
+                className="text-cream/60 hover:text-cream transition-colors"
+              >
+                FAQ
               </a>
             </nav>
           </div>

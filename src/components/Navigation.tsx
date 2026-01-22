@@ -18,7 +18,8 @@ const Navigation = () => {
     { href: '#inicio', label: 'Inicio' },
     { href: '#beneficios', label: 'Beneficios' },
     { href: '#producto', label: 'Producto' },
-    { href: '#comunidad', label: 'Comunidad' },
+    { href: '#precio', label: 'Precio' },
+    { href: '#faq', label: 'FAQ' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -69,14 +70,14 @@ const Navigation = () => {
             </a>
           ))}
           <a
-            href="#producto"
+            href="#precio"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection('#producto');
+              scrollToSection('#precio');
             }}
             className="btn-primary text-sm"
           >
-            Ver Agenda
+            Comprar Ahora
           </a>
         </div>
 
@@ -115,14 +116,14 @@ const Navigation = () => {
                 </a>
               ))}
               <a
-                href="#producto"
+                href="#precio"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection('#producto');
+                  scrollToSection('#precio');
                 }}
                 className="btn-primary text-center mt-2"
               >
-                Ver Agenda
+                Comprar Ahora
               </a>
             </div>
           </motion.div>
