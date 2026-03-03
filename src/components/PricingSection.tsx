@@ -94,7 +94,7 @@ const PricingSection = () => {
 
             {/* CTA Button */}
             <motion.a
-              href="[PONER ENLACE DE PAGO]"
+              href="https://pay.hotmart.com/W103172121L?bid=1769720396663&sck=landing_hello_planner"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="btn-primary w-full text-center block text-lg mb-6"

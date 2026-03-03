@@ -158,7 +158,7 @@ const ProductShowcase = () => {
           className="text-center"
         >
           <a
-            href="[PONER ENLACE DE PAGO]"
+            href="https://pay.hotmart.com/W103172121L?bid=1769720396663&sck=landing_hello_planner"
             className="btn-primary inline-block text-lg"
           >
             Quiero organizarme ahora
