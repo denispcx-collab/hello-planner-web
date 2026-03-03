@@ -61,14 +61,17 @@ const PricingSection = () => {
           <div className="p-8 md:p-10">
             {/* Price */}
             <div className="text-center mb-8">
-              <div className="flex items-center justify-center gap-2 mb-2">
+              <div className="flex items-center justify-center gap-3 mb-2">
                 <span className="text-2xl text-muted-foreground line-through">
-                  29,99€
+                  $18,90 USD
+                </span>
+                <span className="inline-block bg-primary text-primary-foreground text-sm font-semibold px-3 py-1 rounded-full">
+                  -50%
                 </span>
               </div>
               <div className="flex items-baseline justify-center">
                 <span className="text-5xl md:text-6xl font-serif font-bold text-foreground">
-                  14,99€
+                  $9,45 USD
                 </span>
               </div>
               <p className="text-muted-foreground mt-2">Pago único • Tuya para siempre</p>
