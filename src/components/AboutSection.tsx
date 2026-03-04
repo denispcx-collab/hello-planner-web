@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import zeralysPortrait from '@/assets/zeralys-portrait.jpg';
+import helloLogo from '@/assets/hello-planner-logo.png';
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -19,9 +19,9 @@ const AboutSection = () => {
           >
             <div className="relative">
               <img
-                src={zeralysPortrait}
-                alt="Zeralys Garcia, fundadora de Hello Planner"
-                className="w-full max-w-sm mx-auto rounded-2xl shadow-elevated"
+                src={helloLogo}
+                alt="Logo Hello Planner"
+                className="w-full max-w-xs mx-auto"
               />
               {/* Decorative elements */}
               <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary/20 rounded-2xl -z-10" />
