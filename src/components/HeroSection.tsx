@@ -87,7 +87,7 @@ const HeroSection = () => {
                 <img
                   src={heroImage}
                   alt="Mockup de agenda digital Hello Planner abierta en iPad mostrando vista semanal"
-                  className="w-full h-auto rounded-2xl shadow-elevated"
+                  className="w-full h-auto"
                 />
               </motion.div>
               {/* Decorative elements */}
