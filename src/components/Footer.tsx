@@ -110,10 +110,10 @@ const Footer = () => {
             <div className="space-y-3 text-cream/60">
               <p>
                 <a
-                  href="mailto:hola@helloplanner.com"
+                  href="mailto:myhelloplanner@gmail.com"
                   className="hover:text-cream transition-colors"
                 >
-                  hola@helloplanner.com
+                  myhelloplanner@gmail.com
                 </a>
               </p>
               <p>
