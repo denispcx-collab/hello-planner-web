@@ -1,16 +1,19 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Calendar, Bell, Plug, BookOpen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
+import iconShortcuts from '@/assets/icon-shortcuts.webp';
+import iconGoogleCalendar from '@/assets/icon-google-calendar.webp';
+import iconRecordatorios from '@/assets/icon-recordatorios.webp';
 
 const ProductShowcase = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   const integrations = [
-    { icon: Plug, name: 'Apple Shortcuts' },
-    { icon: Calendar, name: 'Google Calendar' },
-    { icon: Bell, name: 'Recordatorios' },
+    { img: iconShortcuts, name: 'Apple Shortcuts' },
+    { img: iconGoogleCalendar, name: 'Google Calendar' },
+    { img: iconRecordatorios, name: 'Recordatorios' },
   ];
 
   const noteApps = ['Goodnotes', 'Notability', 'Noteshelf', 'Kilonotes'];
@@ -50,8 +53,8 @@ const ProductShowcase = () => {
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
               className="flex flex-col items-center gap-3"
             >
-              <div className="w-16 h-16 bg-terracotta-light rounded-2xl flex items-center justify-center">
-                <item.icon className="w-8 h-8 text-primary" />
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center overflow-hidden">
+                <img src={item.img} alt={item.name} className="w-full h-full object-contain" />
               </div>
               <span className="text-sm font-medium">{item.name}</span>
             </motion.div>
