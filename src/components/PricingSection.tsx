@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Check, Sparkles, Download, RefreshCw, Headphones } from 'lucide-react';
+import { Check, Sparkles, Download, Headphones } from 'lucide-react';
 
 const PricingSection = () => {
   const ref = useRef(null);
@@ -20,7 +20,6 @@ const PricingSection = () => {
 
   const highlights = [
     { icon: Download, text: 'Descarga instantánea' },
-    { icon: RefreshCw, text: 'Actualizaciones gratis' },
     { icon: Headphones, text: 'Soporte incluido' },
   ];
 
