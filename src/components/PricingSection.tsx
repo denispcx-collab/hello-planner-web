@@ -14,7 +14,7 @@ const PricingSection = () => {
     'Sección de notas y listas',
     'Hipervínculos para navegación rápida',
     'Compatible con iPad, tablet y móvil',
-    
+    'Stickers personalizados',
     'Soporte por email',
   ];
 
