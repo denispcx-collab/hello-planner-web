@@ -33,7 +33,7 @@ const PricingSection = () => {
           className="text-center mb-12"
         >
           <span className="inline-block text-primary font-medium mb-4 tracking-wide uppercase text-sm">
-            Precio único
+            Inversión única
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold">
             Invierte en tu{' '}
