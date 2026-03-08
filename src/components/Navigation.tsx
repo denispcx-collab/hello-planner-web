@@ -70,11 +70,9 @@ const Navigation = () => {
             </a>
           ))}
           <a
-            href="#precio"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToSection('#precio');
-            }}
+            href="https://pay.hotmart.com/W103172121L?bid=1769720396663&sck=landing_hello_planner"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary text-sm"
           >
             Comprar Ahora
@@ -116,11 +114,9 @@ const Navigation = () => {
                 </a>
               ))}
               <a
-                href="#precio"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('#precio');
-                }}
+                href="https://pay.hotmart.com/W103172121L?bid=1769720396663&sck=landing_hello_planner"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary text-center mt-2"
               >
                 Comprar Ahora
