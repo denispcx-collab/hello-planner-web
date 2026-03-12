@@ -11,12 +11,6 @@ import mockupMotivation from '@/assets/mockup-motivation.webp';
 
 const slides = [
   {
-    image: mockupPortadas,
-    title: 'Tu estilo, tu planner.',
-    copy: '6 portadas minimalistas diseñadas para inspirarte cada vez que abras tu planner.',
-    alt: 'Variedad de diseños de portadas Hello Planner 2026',
-  },
-  {
     image: mockupDaily,
     title: 'Un lienzo para tus ideas.',
     copy: 'Organiza tus horas, prioridades, comidas y hasta tu hidratación en un solo lugar.',
