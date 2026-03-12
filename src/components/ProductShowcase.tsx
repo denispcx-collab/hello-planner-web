@@ -5,6 +5,7 @@ import { BookOpen } from 'lucide-react';
 import iconShortcuts from '@/assets/icon-shortcuts.webp';
 import iconGoogleCalendar from '@/assets/icon-google-calendar.webp';
 import iconRecordatorios from '@/assets/icon-recordatorios.webp';
+import iconAppleCalendar from '@/assets/icon-apple-calendar.webp';
 
 const ProductShowcase = () => {
   const ref = useRef(null);
@@ -12,6 +13,7 @@ const ProductShowcase = () => {
 
   const integrations = [
     { img: iconShortcuts, name: 'Apple Shortcuts' },
+    { img: iconAppleCalendar, name: 'Apple Calendar' },
     { img: iconGoogleCalendar, name: 'Google Calendar' },
     { img: iconRecordatorios, name: 'Recordatorios' },
   ];
