@@ -16,8 +16,8 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#inicio', label: 'Inicio' },
-    { href: '#beneficios', label: 'Beneficios' },
     { href: '#producto', label: 'Producto' },
+    { href: '#beneficios', label: 'Beneficios' },
     { href: '#precio', label: 'Precio' },
     { href: '#faq', label: 'FAQ' },
   ];
