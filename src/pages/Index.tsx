@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ProblemSolutionSection from '@/components/ProblemSolutionSection';
 import ProductShowcase from '@/components/ProductShowcase';
+import ProductSlider from '@/components/ProductSlider';
 import BenefitsSection from '@/components/BenefitsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import PricingSection from '@/components/PricingSection';
