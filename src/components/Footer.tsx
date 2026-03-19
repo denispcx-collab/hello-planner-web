@@ -128,8 +128,8 @@ const Footer = () => {
                 </a>
               </p>
               <p>
-                <a
-                  href="https://www.instagram.com/helloplanner"
+                <a                  
+                  href="https://www.instagram.com/myhelloplanner"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-cream transition-colors"
