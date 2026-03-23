@@ -68,7 +68,7 @@ const AboutSection = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/helloplanner"
+                href="https://www.instagram.com/myhelloplanner"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
