@@ -34,7 +34,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.instagram.com/helloplanner"
+                href="https://www.instagram.com/myhelloplanner"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-cream/60 hover:text-primary transition-colors"
