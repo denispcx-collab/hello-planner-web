@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-warm-beige" ref={ref}>
+    <section className="section-padding" ref={ref}>
       <div className="container-wide">
         {/* Header */}
         <motion.div
@@ -58,7 +58,7 @@ const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.15 }}
-              className="bg-background rounded-2xl p-8 shadow-[var(--shadow-soft)] relative"
+              className="bg-warm-beige rounded-2xl p-8 shadow-[var(--shadow-soft)] relative"
             >
               {/* Quote Icon */}
               <div className="absolute -top-4 left-6">
