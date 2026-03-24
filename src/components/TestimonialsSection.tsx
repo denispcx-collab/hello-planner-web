@@ -32,7 +32,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="section-padding bg-warm-beige" ref={ref}>
+    <section className="section-padding" ref={ref}>
       <div className="container-wide">
         {/* Header */}
         <motion.div
