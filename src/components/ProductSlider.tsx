@@ -98,7 +98,7 @@ const ProductSlider = () => {
                       <img
                         src={slide.image}
                         alt={slide.alt}
-                        className="w-full max-w-sm rounded-2xl shadow-elevated object-contain"
+                        className="w-full max-w-sm rounded-2xl object-contain"
                       />
                     </div>
                     <div className="w-full md:w-1/2 text-center md:text-left">
