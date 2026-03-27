@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { CalendarDays, Target, Wallet, Heart } from 'lucide-react';
-import plannerOverview from '@/assets/planner-overview.png';
+import plannerOverview from '@/assets/myhelloplanner-ipads.webp';
 
 const BenefitsSection = () => {
   const ref = useRef(null);
