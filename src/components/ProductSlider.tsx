@@ -63,19 +63,19 @@ const ProductSlider = () => {
 
   return (
     <section id="detalles" className="section-padding bg-warm-beige" ref={sectionRef}>
-      <div className="container-wide max-w-5xl mx-auto">
+      <div className="container-wide mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="mb-12 text-center"
         >
-          <span className="inline-block text-primary font-medium mb-4 tracking-wide uppercase text-sm">
+          <span className="mb-4 inline-block text-sm font-medium uppercase tracking-wide text-primary">
             Conoce tu planner
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-semibold mb-4">
+          <h2 className="text-3xl font-serif font-semibold md:text-4xl lg:text-5xl">
             Diseñado para cada aspecto de{' '}
-            <span className="text-primary italic">tu día</span>
+            <span className="italic text-primary">tu día</span>
           </h2>
         </motion.div>
 
@@ -85,27 +85,24 @@ const ProductSlider = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          {/* Carousel */}
           <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
             <div className="flex">
               {slides.map((slide, index) => (
-                <div
-                  key={index}
-                  className="flex-[0_0_100%] min-w-0 px-4"
-                >
-                  <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                    <div className="w-full md:w-1/2 flex justify-center">
+                <div key={index} className="min-w-0 flex-[0_0_100%] px-4">
+                  <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
+                    <div className="flex w-full justify-center md:w-1/2">
                       <img
                         src={slide.image}
                         alt={slide.alt}
                         className="w-full max-w-sm rounded-2xl object-contain"
                       />
                     </div>
-                    <div className="w-full md:w-1/2 text-center md:text-left">
-                      <h3 className="text-2xl md:text-3xl font-serif font-semibold mb-4">
+
+                    <div className="w-full text-center md:w-1/2 md:text-left">
+                      <h3 className="mb-4 text-2xl font-serif font-semibold md:text-3xl">
                         {slide.title}
                       </h3>
-                      <p className="text-muted-foreground text-lg leading-relaxed">
+                      <p className="text-lg leading-relaxed text-muted-foreground">
                         {slide.copy}
                       </p>
                     </div>
@@ -115,34 +112,31 @@ const ProductSlider = () => {
             </div>
           </div>
 
-          {/* Navigation arrows */}
           <button
             onClick={() => emblaApi?.scrollPrev()}
             disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-6 w-10 h-10 rounded-full bg-card shadow-soft flex items-center justify-center text-foreground hover:bg-accent transition-colors disabled:opacity-30"
+            className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-card text-foreground shadow-soft transition-colors hover:bg-accent disabled:opacity-30 md:-translate-x-6"
             aria-label="Anterior"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <ChevronLeft className="h-5 w-5" />
           </button>
+
           <button
             onClick={() => emblaApi?.scrollNext()}
             disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-6 w-10 h-10 rounded-full bg-card shadow-soft flex items-center justify-center text-foreground hover:bg-accent transition-colors disabled:opacity-30"
+            className="absolute right-0 top-1/2 flex h-10 w-10 translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-card text-foreground shadow-soft transition-colors hover:bg-accent disabled:opacity-30 md:translate-x-6"
             aria-label="Siguiente"
           >
-            <ChevronRight className="w-5 h-5" />
+            <ChevronRight className="h-5 w-5" />
           </button>
 
-          {/* Dots */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="mt-8 flex justify-center gap-2">
             {slides.map((_, index) => (
               <button
                 key={index}
                 onClick={() => emblaApi?.scrollTo(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === selectedIndex
-                    ? 'bg-primary w-8'
-                    : 'bg-primary/30'
+                className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
+                  index === selectedIndex ? 'w-8 bg-primary' : 'bg-primary/30'
                 }`}
                 aria-label={`Ir a slide ${index + 1}`}
               />
