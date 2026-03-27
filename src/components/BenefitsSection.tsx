@@ -62,7 +62,7 @@ const BenefitsSection = () => {
             <img
               src={plannerOverview}
               alt="Hello Planner Digital 2026 - Vista general con calendario, planner y notas"
-              className="w-72 md:w-80 lg:w-96 rounded-2xl shadow-elevated"
+              className="w-72 md:w-80 lg:w-96 rounded-2xl"
             />
           </motion.div>
 
