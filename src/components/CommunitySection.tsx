@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { Mail, Gift, Sparkles, Check } from 'lucide-react';
+import { useRef, useEffect } from 'react';
+import { Mail, Gift, Sparkles } from 'lucide-react';
 
 const CommunitySection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Integrate with email service
-    console.log('Newsletter signup:', { name, email });
-    setIsSubmitted(true);
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//web.webformscr.com/apps/fc3/build/loader.js';
+    script.async = true;
+    script.setAttribute('sp-form-id', 'e3d7c88a343959b8863792d762017ced652206dcc53ec37e04d8f0d3c1f77e9a');
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const benefits = [
     { icon: Gift, text: 'Descuentos exclusivos' },
@@ -60,62 +60,22 @@ const CommunitySection = () => {
             ))}
           </div>
 
-          {/* Form */}
-          {!isSubmitted ? (
-            <motion.form
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              onSubmit={handleSubmit}
-              className="max-w-md mx-auto"
+          {/* SendPulse Popup Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.5 }}
+          >
+            <button
+              sp-show-form="252735"
+              className="btn-primary text-lg px-8 py-3"
             >
-              <div className="space-y-4 mb-6">
-                <input
-                  type="text"
-                  placeholder="Tu nombre"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="input-elegant"
-                />
-                <input
-                  type="email"
-                  placeholder="Tu mejor correo"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="input-elegant"
-                />
-              </div>
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="btn-primary w-full text-lg"
-              >
-                Suscribirme a la lista
-              </motion.button>
-              <p className="text-xs text-muted-foreground mt-4">
-                Sin spam. Puedes darte de baja cuando quieras.
-              </p>
-            </motion.form>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="py-8"
-            >
-              <div className="w-16 h-16 mx-auto mb-4 bg-sage-light rounded-full flex items-center justify-center">
-                <Check className="w-8 h-8 text-sage" />
-              </div>
-              <h3 className="text-xl font-serif font-semibold mb-2">
-                ¡Bienvenida al Club!
-              </h3>
-              <p className="text-muted-foreground">
-                Revisa tu correo para confirmar tu suscripción.
-              </p>
-            </motion.div>
-          )}
+              Suscribirme a la lista
+            </button>
+            <p className="text-xs text-muted-foreground mt-4">
+              Sin spam. Puedes darte de baja cuando quieras.
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>
