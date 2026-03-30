@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef, useState } from 'react';
-import { Mail, Gift, Sparkles, Check } from 'lucide-react';
+import { useRef, useEffect } from 'react';
+import { Mail, Gift, Sparkles } from 'lucide-react';
 
 const CommunitySection = () => {
   const ref = useRef(null);
