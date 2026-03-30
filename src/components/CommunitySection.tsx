@@ -67,7 +67,9 @@ const CommunitySection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             <button
-              sp-show-form="252735"
+              ref={(el) => {
+                if (el) el.setAttribute('sp-show-form', '252735');
+              }}
               className="btn-primary text-lg px-8 py-3"
             >
               Suscribirme a la lista
