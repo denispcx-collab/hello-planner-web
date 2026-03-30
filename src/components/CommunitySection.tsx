@@ -6,16 +6,16 @@ import { Mail, Gift, Sparkles } from 'lucide-react';
 const CommunitySection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Integrate with email service
-    console.log('Newsletter signup:', { name, email });
-    setIsSubmitted(true);
-  };
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '//web.webformscr.com/apps/fc3/build/loader.js';
+    script.async = true;
+    script.setAttribute('sp-form-id', 'e3d7c88a343959b8863792d762017ced652206dcc53ec37e04d8f0d3c1f77e9a');
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const benefits = [
     { icon: Gift, text: 'Descuentos exclusivos' },
