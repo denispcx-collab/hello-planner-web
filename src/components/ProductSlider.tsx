@@ -81,6 +81,9 @@ const ProductSlider = () => {
             Diseñado para cada aspecto de{' '}
             <span className="italic text-primary">tu día</span>
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Explora cada rincón de tu Hello Planner. Un espacio donde la elegancia del diseño digital se encuentra con la practicidad, permitiéndote organizar tus metas, hábitos y finanzas con una fluidez que se adapta a tu ritmo de vida.
+          </p>
         </motion.div>
 
         <motion.div
