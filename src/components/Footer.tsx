@@ -134,7 +134,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="hover:text-cream transition-colors"
                 >
-                  @helloplanner
+                  @myhelloplanner
                 </a>
               </p>
               <p>

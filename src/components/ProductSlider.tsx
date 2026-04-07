@@ -1,65 +1,69 @@
-import { useState, useCallback, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
-import useEmblaCarousel from 'embla-carousel-react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-import mockupPortadas from '@/assets/mockup-portadas.webp';
-import mockupDaily from '@/assets/mockup-daily.webp';
-import mockupAgendar from '@/assets/mockup-agendar.webp';
-import mockupMonthly from '@/assets/mockup-monthly.webp';
-import mockupMotivation from '@/assets/mockup-motivation.webp';
+import carrusel01 from '@/assets/carrusel_01.webp';
+import carrusel02 from '@/assets/carrusel_02.webp';
+import carrusel03 from '@/assets/carrusel_03.webp';
+import carrusel04 from '@/assets/carrusel_04.webp';
+import carrusel05 from '@/assets/carrusel_05.webp';
+import carrusel06 from '@/assets/carrusel_06.webp';
+import carrusel07 from '@/assets/carrusel_07.webp';
+import carrusel08 from '@/assets/carrusel_08.webp';
+import carrusel09 from '@/assets/carrusel_09.webp';
+import carrusel10 from '@/assets/carrusel_10.webp';
 
 const slides = [
-  {
-    image: mockupDaily,
-    title: 'Un lienzo para tus ideas.',
-    copy: 'Organiza tus horas, prioridades, comidas y hasta tu hidratación en un solo lugar.',
-    alt: 'Vista diaria del Hello Planner Digital con planificación completa',
-  },
-  {
-    image: mockupAgendar,
-    title: 'Conexión total.',
-    copy: 'Toca cualquier fecha para añadir eventos a tu calendario de Google o Apple al instante. ¡Productividad real!',
-    alt: 'Integración con calendarios desde Hello Planner',
-  },
-  {
-    image: mockupMonthly,
-    title: 'El panorama completo.',
-    copy: 'Planifica tus objetivos del mes y visualiza tus semanas con total claridad.',
-    alt: 'Vista mensual del Hello Planner Digital 2026',
-  },
-  {
-    image: mockupMotivation,
-    title: 'Mucho más que una agenda.',
-    copy: 'Espacios para afirmaciones, notas de gratitud y seguimiento de hábitos para cuidar de ti.',
-    alt: 'Sección de motivación y bienestar del Hello Planner',
-  },
+  { image: carrusel01, alt: 'Vista mensual del Hello Planner - Marzo 2026' },
+  { image: carrusel02, alt: 'Sección de notas con cuadrícula del Hello Planner' },
+  { image: carrusel03, alt: 'Vision Board mensual del Hello Planner' },
+  { image: carrusel04, alt: 'Vista semanal del Hello Planner con prioridades y tareas' },
+  { image: carrusel05, alt: 'Planificación diaria completa del Hello Planner' },
+  { image: carrusel06, alt: 'Control de gastos mensual del Hello Planner' },
+  { image: carrusel07, alt: 'Habit Tracker mensual del Hello Planner' },
+  { image: carrusel08, alt: 'Objetivos mensuales con acciones del Hello Planner' },
+  { image: carrusel09, alt: 'Secciones personalizables del Hello Planner' },
+  { image: carrusel10, alt: 'Plan de entrenamiento del Hello Planner' },
 ];
+
+const AUTOPLAY_INTERVAL = 4000;
 
 const ProductSlider = () => {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: '-50px' });
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'center' });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
+  const resetAutoplay = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => {
+      setDirection(1);
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, AUTOPLAY_INTERVAL);
+  }, []);
 
   useEffect(() => {
-    if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
+    resetAutoplay();
     return () => {
-      emblaApi.off('select', onSelect);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [emblaApi, onSelect]);
+  }, [currentIndex, resetAutoplay]);
+
+  const goTo = (index: number) => {
+    setDirection(index > currentIndex ? 1 : -1);
+    setCurrentIndex(index);
+  };
+
+  const goPrev = () => {
+    setDirection(-1);
+    setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goNext = () => {
+    setDirection(1);
+    setCurrentIndex((prev) => (prev + 1) % slides.length);
+  };
 
   return (
     <section id="detalles" className="section-padding bg-warm-beige" ref={sectionRef}>
@@ -77,6 +81,9 @@ const ProductSlider = () => {
             Diseñado para cada aspecto de{' '}
             <span className="italic text-primary">tu día</span>
           </h2>
+          <p className="mt-4 text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Explora cada rincón de tu Hello Planner. Un espacio donde la elegancia del diseño digital se encuentra con la practicidad, permitiéndote organizar tus metas, hábitos y finanzas con una fluidez que se adapta a tu ritmo de vida.
+          </p>
         </motion.div>
 
         <motion.div
@@ -85,58 +92,48 @@ const ProductSlider = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
-            <div className="flex">
-              {slides.map((slide, index) => (
-                <div key={index} className="min-w-0 flex-[0_0_100%] px-4">
-                  <div className="flex flex-col items-center gap-8 md:flex-row md:gap-12">
-                    <div className="flex w-full justify-center md:w-1/2">
-                      <img
-                        src={slide.image}
-                        alt={slide.alt}
-                        className="w-full max-w-sm rounded-2xl object-contain"
-                      />
-                    </div>
-
-                    <div className="w-full text-center md:w-1/2 md:text-left">
-                      <h3 className="mb-4 text-2xl font-serif font-semibold md:text-3xl">
-                        {slide.title}
-                      </h3>
-                      <p className="text-lg leading-relaxed text-muted-foreground">
-                        {slide.copy}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Fade carousel container */}
+          <div className="relative mx-auto w-full max-w-sm aspect-[3/4] rounded-2xl overflow-hidden">
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.img
+                key={currentIndex}
+                src={slides[currentIndex].image}
+                alt={slides[currentIndex].alt}
+                custom={direction}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                className="absolute inset-0 w-full h-full object-contain"
+              />
+            </AnimatePresence>
           </div>
 
+          {/* Navigation arrows */}
           <button
-            onClick={() => emblaApi?.scrollPrev()}
-            disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-card text-foreground shadow-soft transition-colors hover:bg-accent disabled:opacity-30 md:-translate-x-6"
+            onClick={goPrev}
+            className="absolute left-0 top-1/2 flex h-10 w-10 -translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-card text-foreground shadow-soft transition-colors hover:bg-accent md:-translate-x-6"
             aria-label="Anterior"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
 
           <button
-            onClick={() => emblaApi?.scrollNext()}
-            disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 flex h-10 w-10 translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-card text-foreground shadow-soft transition-colors hover:bg-accent disabled:opacity-30 md:translate-x-6"
+            onClick={goNext}
+            className="absolute right-0 top-1/2 flex h-10 w-10 translate-x-2 -translate-y-1/2 items-center justify-center rounded-full bg-card text-foreground shadow-soft transition-colors hover:bg-accent md:translate-x-6"
             aria-label="Siguiente"
           >
             <ChevronRight className="h-5 w-5" />
           </button>
 
+          {/* Dots */}
           <div className="mt-8 flex justify-center gap-2">
             {slides.map((_, index) => (
               <button
                 key={index}
-                onClick={() => emblaApi?.scrollTo(index)}
+                onClick={() => goTo(index)}
                 className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
-                  index === selectedIndex ? 'w-8 bg-primary' : 'bg-primary/30'
+                  index === currentIndex ? 'w-8 bg-primary' : 'bg-primary/30'
                 }`}
                 aria-label={`Ir a slide ${index + 1}`}
               />
