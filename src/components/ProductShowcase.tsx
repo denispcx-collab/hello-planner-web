@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { BookOpen } from 'lucide-react';
 import iconShortcuts from '@/assets/icon-shortcuts.webp';
 import iconGoogleCalendar from '@/assets/icon-google-calendar.webp';
-import iconRecordatorios from '@/assets/icon-recordatorios.webp';
+import iconRecordatorios from '@/assets/recordatorio-app.webp';
 import iconAppleCalendar from '@/assets/icon-apple-calendar.webp';
 
 const ProductShowcase = () => {
