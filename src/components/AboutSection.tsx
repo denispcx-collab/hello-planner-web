@@ -48,7 +48,7 @@ const AboutSection = () => {
               <p>
                 Mi misión es ayudarte a conquistar tus metas diarias sin perder la paz
                 mental. Porque organizar tu vida no debería ser una tarea más, sino un
-                momento para ti.
+                momento para ti. 
               </p>
               <p className="font-serif text-foreground">
                 ¡Gracias por estar aquí! ✨
