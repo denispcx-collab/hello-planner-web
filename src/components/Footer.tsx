@@ -121,10 +121,10 @@ const Footer = () => {
             <div className="space-y-3 text-cream/60">
               <p>
                 <a
-                  href="mailto:myhelloplanner@gmail.com"
+                  href="mailto:Info@myhelloplanner.com"
                   className="hover:text-cream transition-colors"
                 >
-                  myhelloplanner@gmail.com
+                  Info@myhelloplanner.com
                 </a>
               </p>
               <p>
@@ -157,7 +157,7 @@ const Footer = () => {
             © {currentYear} Hello Planner. Todos los derechos reservados.
           </p>
           <p className="text-cream/50 text-sm flex items-center gap-1">
-            Hecho con <Heart className="w-4 h-4 text-primary" /> por Zeralys
+            Hecho con <Heart className="w-4 h-4 text-primary" /> para ti
           </p>
         </div>
       </div>
