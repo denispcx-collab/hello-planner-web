@@ -38,17 +38,14 @@ const AboutSection = () => {
               Sobre Hello Planner
             </span>
             <h3 className="text-3xl md:text-4xl font-serif font-semibold mb-6">
-              Hola, soy <span className="text-primary italic">Zeralys</span>
+              <span className="text-primary italic">¡Hola!</span>
             </h3>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Creé Hello Planner porque necesitaba una herramienta que uniera
-                <strong className="text-foreground"> funcionalidad y belleza</strong>.
-              </p>
-              <p>
-                Mi misión es ayudarte a conquistar tus metas diarias sin perder la paz
-                mental. Porque organizar tu vida no debería ser una tarea más, sino un
-                momento para ti. 
+                Creamos Hello Planner porque necesitábamos una herramienta que uniera
+                <strong className="text-foreground"> funcionalidad y belleza</strong> en un solo lugar.
+                Lo que comenzó como un proyecto personal para organizar nuestros días, se convirtió en una
+                comunidad de planificación que hoy nos inspira a seguir creando para ti.
               </p>
               <p className="font-serif text-foreground">
                 ¡Gracias por estar aquí! ✨
