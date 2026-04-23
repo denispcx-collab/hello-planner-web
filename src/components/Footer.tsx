@@ -167,7 +167,7 @@ const Footer = () => {
             © {currentYear} Hello Planner. Todos los derechos reservados.
           </p>
           <p className="text-cream/50 text-sm flex items-center gap-1">
-            Hecho con <Heart className="w-4 h-4 text-primary" /> para ti
+            Diseñado por David Salinas <a href="https://soydavidsalinas.com" target="_blank" rel="noopener noreferrer" className="hover:text-cream transition-colors">[soydavidsalinas.com]</a>
           </p>
         </div>
       </div>
