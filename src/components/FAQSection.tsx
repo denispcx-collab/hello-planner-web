@@ -105,10 +105,10 @@ const FAQSection = () => {
             ¿Tienes más preguntas?
           </p>
           <a
-            href="mailto:myhelloplanner@gmail.com"
+            href="mailto:Info@myhelloplanner.com"
             className="text-primary font-medium hover:underline"
           >
-            Escríbenos a myhelloplanner@gmail.com
+            Escríbenos a Info@myhelloplanner.com
           </a>
         </motion.div>
       </div>
