@@ -6,7 +6,7 @@ import CalendarSyncSection from '@/components/CalendarSyncSection';
 import ProductSlider from '@/components/ProductSlider';
 import CoverShowcase from '@/components/CoverShowcase';
 import BenefitsSection from '@/components/BenefitsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
+
 import PricingSection from '@/components/PricingSection';
 import FAQSection from '@/components/FAQSection';
 import CommunitySection from '@/components/CommunitySection';
@@ -24,7 +24,7 @@ const Index = () => {
       <CalendarSyncSection />
       <ProductSlider />
       <BenefitsSection />
-      <TestimonialsSection />
+      
       <CoverShowcase />
       <PricingSection />
       <FAQSection />
