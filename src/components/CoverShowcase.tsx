@@ -7,7 +7,7 @@ const CoverShowcase = () => {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   return (
-    <section id="portadas" className="section-padding bg-warm-beige" ref={ref}>
+    <section id="portadas" className="section-padding" ref={ref}>
       <div className="container-wide">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
